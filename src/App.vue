@@ -1,4 +1,7 @@
 <template>
+  <Header />
   <router-view />
 </template>
-<script setup></script>
+<script setup>
+import Header from '@src/components/Header.vue';
+</script>

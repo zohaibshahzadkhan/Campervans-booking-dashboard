@@ -1,7 +1,7 @@
 <template>
-  <Header />
+  <AppHeader />
   <router-view />
 </template>
 <script setup>
-import Header from '@src/components/Header.vue';
+import AppHeader from '@src/components/AppHeader.vue';
 </script>

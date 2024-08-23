@@ -12,8 +12,11 @@
     "format": "prettier --write 'src/**/*.{js,vue}'"
   },
   "dependencies": {
+    "axios": "^1.7.4",
+    "pinia": "^2.2.2",
     "vue": "^3.4.37",
-    "vue-router": "^4.4.3"
+    "vue-router": "^4.4.3",
+    "vue3-select": "^0.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

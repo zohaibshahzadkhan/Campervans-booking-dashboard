@@ -1,31 +1,39 @@
 <template>
   <div class="flex justify-center items-center min-h-96 p-4">
     <div v-if="stationStore.loading" class="flex justify-center items-center">
-      <Spinner />
+      <Spinner data-testid="loading-spinner" />
     </div>
     <div v-else-if="stationStore.error" class="text-center text-red-500">
       <p>{{ stationStore.error }}</p>
     </div>
     <div
+      data-testid="booking-details"
       v-else-if="booking"
       class="bg-white p-4 border rounded shadow-md w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
     >
       <h2 class="text-xl font-bold mb-4">Booking Details</h2>
-      <p><strong>Customer Name:</strong> {{ booking.customerName }}</p>
-      <p>
+      <p data-testid="customer-name">
+        <strong>Customer Name:</strong> {{ booking.customerName }}
+      </p>
+      <p data-testid="start-date">
         <strong>Booking Start Date:</strong>
         {{ booking.startDate.split('T')[0] }}
       </p>
-      <p>
+      <p data-testid="end-date">
         <strong>Booking End Date:</strong> {{ booking.endDate.split('T')[0] }}
       </p>
-      <p><strong>Booking Duration:</strong> {{ bookingDuration }}</p>
+      <p data-testid="duration">
+        <strong>Booking Duration:</strong> {{ bookingDuration }}
+      </p>
       <p>
-        <strong>Pickup / Return Station Name:</strong>
+        <strong data-testid="station-name"
+          >Pickup / Return Station Name:</strong
+        >
         {{ pickupReturnStationName }}
       </p>
       <div class="flex justify-center mt-4">
         <button
+          data-testid="back-button"
           @click="goBack"
           class="px-4 py-2 bg-blue-500 text-white rounded"
         >

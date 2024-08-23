@@ -1,6 +1,7 @@
 <template>
   <div class="relative">
     <vue3-select
+      data-testid="station-select"
       v-model="currentStation"
       :options="stations"
       label="name"

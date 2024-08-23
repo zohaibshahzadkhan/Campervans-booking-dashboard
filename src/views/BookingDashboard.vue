@@ -4,7 +4,11 @@
       @select="onStationSelect"
       class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl"
     />
-    <div v-if="stationStore.error" class="mt-4 text-red-500">
+    <div
+      v-if="stationStore.error"
+      data-testid="error-message"
+      class="mt-4 text-red-500"
+    >
       {{ stationStore.error }}
     </div>
     <BookingCalendar
@@ -14,6 +18,7 @@
         !stationStore.error
       "
       class="mt-20 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-4xl"
+      data-testid="booking-calendar"
     />
   </div>
 </template>
@@ -24,9 +29,6 @@ import AutoComplete from '@src/components/AutoComplete.vue';
 import BookingCalendar from '@src/components/calendar/BookingCalendar.vue';
 
 const stationStore = useStationStore();
-
-// const selectedStation = computed(() => stationStore.selectedStation);
-
 const onStationSelect = async (station) => {
   stationStore.setSelectedStation(station);
 };

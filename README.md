@@ -53,7 +53,23 @@ Below are screenshots showcasing the desktop and mobile views of the application
 ![Desktop Booking Detail](readme-media/booking-detail-desktop.png)
 
 ![Mobile Booking Detail](readme-media/booking-detail-mobile-view.png)
+
+## Unit Testing
+
+This project includes unit tests to ensure the functionality and reliability of the code. The tests are written using Vitest. Follow the instructions below to run the tests:
+
+1. **Install Dependencies**: Ensure that you have installed all necessary dependencies, including the testing libraries. If you haven't already, run:
+   ```bash
+   npm install
+
+2. **Run tests**:
+   ```bash
+   npm run test
+
+![Tests](readme-media/test.png)
+
 ## Setup
+
 
 1. **Clone the Repository**:
    ```bash

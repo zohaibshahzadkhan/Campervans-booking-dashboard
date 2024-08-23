@@ -2,8 +2,9 @@
   <div class="relative">
     <vue3-select
       v-model="currentStation"
-      :options="stationStore.stations"
+      :options="stations"
       label="name"
+      :getOptionLabel="(station) => station.name"
       placeholder="Search station..."
       class="w-full"
       :clearable="false"
@@ -31,7 +32,7 @@ onMounted(async () => {
       await stationStore.fetchStations();
     }
     if (selectedStation) {
-      currentStation.value = selectedStation;
+      currentStation.value = selectedStation.value;
     }
   } catch (error) {
     console.error('Error fetching stations:', error);

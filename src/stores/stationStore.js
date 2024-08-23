@@ -7,6 +7,8 @@ export const useStationStore = defineStore('stationStore', () => {
   const bookings = ref([]);
   const booking = ref(null);
   const selectedStation = ref(null);
+  const selectedYear = ref(null);
+  const selectedMonth = ref(null);
   const loading = ref(false);
   const error = ref(null);
 
@@ -35,15 +37,27 @@ export const useStationStore = defineStore('stationStore', () => {
       : [];
   };
 
+  const setYear = (year) => {
+    selectedYear.value = year;
+  };
+
+  const setMonth = (month) => {
+    selectedMonth.value = month;
+  };
+
   return {
     stations,
     bookings,
     booking,
     selectedStation,
+    selectedMonth,
+    selectedYear,
     loading,
     error,
     fetchStations,
     setSelectedStation,
     setStationBookings,
+    setYear,
+    setMonth,
   };
 });

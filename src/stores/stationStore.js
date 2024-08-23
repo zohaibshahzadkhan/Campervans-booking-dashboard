@@ -31,6 +31,22 @@ export const useStationStore = defineStore('stationStore', () => {
     }
   };
 
+  const fetchBooking = async (stationId, bookingId) => {
+    loading.value = true;
+    error.value = null;
+    try {
+      const response = await api.get(
+        `/stations/${stationId}/bookings/${bookingId}`,
+      );
+      booking.value = response.data;
+    } catch (err) {
+      console.error('Error fetching booking details:', err);
+      error.value = 'Failed to load booking details.';
+    } finally {
+      loading.value = false;
+    }
+  };
+
   const setStationBookings = () => {
     bookings.value = selectedStation.value
       ? selectedStation.value.bookings
@@ -55,6 +71,7 @@ export const useStationStore = defineStore('stationStore', () => {
     loading,
     error,
     fetchStations,
+    fetchBooking,
     setSelectedStation,
     setStationBookings,
     setYear,
